@@ -10,7 +10,7 @@ import robocode.control.RobotSetup;
 import robocode.control.RobotSpecification;
 
 
-//HOLA y hasta luego eres po
+//HOLA y hasta luego es mi cumple
 /**
  * 
  * @date   2018-03-22
