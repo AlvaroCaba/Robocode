@@ -10,7 +10,7 @@ import robocode.control.RobotSetup;
 import robocode.control.RobotSpecification;
 
 
-//HOLA
+//HOLA y adios
 /**
  * 
  * @date   2018-03-22
