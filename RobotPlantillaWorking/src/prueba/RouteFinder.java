@@ -10,7 +10,7 @@ import robocode.control.RobotSetup;
 import robocode.control.RobotSpecification;
 
 
-//HOLA y hasta luego eres tonto
+//HOLA y hasta luego eres po
 /**
  * 
  * @date   2018-03-22
@@ -19,7 +19,7 @@ import robocode.control.RobotSpecification;
  * 
  * 
  */
-//po
+
 public class RouteFinder {
 
 	public static void main(String[] args) {
