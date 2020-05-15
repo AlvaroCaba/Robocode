@@ -10,7 +10,7 @@ import robocode.control.RobotSetup;
 import robocode.control.RobotSpecification;
 
 
-//HOLA y hasta luego es mi cumple cumplo 20
+
 /**
  * 
  * @date   2018-03-22
@@ -20,7 +20,7 @@ import robocode.control.RobotSpecification;
  * 
  */
 
-//uyuyuuyu 85 
+
 public class RouteFinder {
 
 	public static void main(String[] args) {
