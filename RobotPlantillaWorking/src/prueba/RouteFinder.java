@@ -20,7 +20,7 @@ import robocode.control.RobotSpecification;
  * 
  */
 
-//uyuyuuyuu
+//uyuyuuyu
 public class RouteFinder {
 
 	public static void main(String[] args) {
