@@ -105,10 +105,11 @@ public class RouteFinder {
 		
 		existingRobots[indice] = modelRobots[1];
 
-		double fila = 125.0, columna = 125.0, arriba = 0.0;
+		//double fila = 125.0, columna = 125.0, 
+		double arriba = 0.0;
 		
-		robotSetups[indice]=new RobotSetup(   fila  	   ,        //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT
-											 columna		   ,        //AQUÃ� DEBE FIGURAR LA COLUMNA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT    
+		robotSetups[indice]=new RobotSetup(  (double) 50*p.filaIni +25	   ,        //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT
+											 (double) 50* p.columIni+25		   ,        //AQUÃ� DEBE FIGURAR LA COLUMNA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT    
 											 arriba);              //orientaciÃ³n inicial
 
 		
@@ -132,13 +133,13 @@ public class RouteFinder {
 			for (int c = 0; c < nCol; c++){
 				
 				//HEMOS PUESTO SOLO UNO
-				if(p.matriz[f][c] == 1) {
+				if((p.matriz[f][c]) == 1) {
 					
 					existingRobots[indice] = modelRobots[0];   //sittingDuck
 					double fi = f;
 					double co = c;
 					
-					robotSetups[indice]=  new RobotSetup(fi,co,arriba);   //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE AL CENTRO DE LA CELDA DONDE HAY OBSTÃ�CULO
+					robotSetups[indice]=  new RobotSetup(50*fi+25,50*co+25,arriba);   //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE AL CENTRO DE LA CELDA DONDE HAY OBSTÃ�CULO
 																		//AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE AL CENTRO DE LA COLUMNA DONDE HAY OBSTÃ�CULO
 																		//orientaciÃ³n
 					indice++;
