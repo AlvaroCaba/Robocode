@@ -32,6 +32,30 @@ public class Problema {
 		
 	}
 	
+	public int getNumFil() {
+		return numFil;
+	}
+
+	public int getNumCol() {
+		return numCol;
+	}
+
+	public int getFilaIni() {
+		return filaIni;
+	}
+
+	public int getFilaFin() {
+		return filaFin;
+	}
+
+	public int getColumIni() {
+		return columIni;
+	}
+
+	public int getColumFin() {
+		return columFin;
+	}
+
 	private void obstaculos() {
 		int cont = 0;
 		while(cont < numObstaculos) {
