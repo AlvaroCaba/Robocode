@@ -62,6 +62,7 @@ public class RouteFinder {
 		
 		
 		
+		
 		// Crear el RobocodeEngine desde una instalaciÃ³n en C:/Robocode
 		RobocodeEngine engine =
 				 new RobocodeEngine(new java.io.File("C:/Robocode")); //Windows
@@ -137,8 +138,7 @@ public class RouteFinder {
 					
 					existingRobots[indice] = modelRobots[0];   //sittingDuck
 					double fi = f;
-					double co = c;
-					
+					double co = c;					
 					robotSetups[indice]=  new RobotSetup(50*fi+25,50*co+25,arriba);   //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE AL CENTRO DE LA CELDA DONDE HAY OBSTÃ�CULO
 																		//AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE AL CENTRO DE LA COLUMNA DONDE HAY OBSTÃ�CULO
 																		//orientaciÃ³n
