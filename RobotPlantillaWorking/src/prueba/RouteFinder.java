@@ -1,5 +1,6 @@
 package prueba;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -36,7 +37,7 @@ public class RouteFinder {
 		
 		//nÃºmero de obstÃ¡culos
 		////DEBERA COINCIDIR CON EL VALOR PROPORCIONADO AL ROBOT
-		int numObstaculos = 1;
+		int numObstaculos = 8;
 		
 		//semilla para el generador de nÃºmeros aleatorios
 		//DEBERA COINCIDIR CON EL VALOR PROPORCIONADO AL ROBOT
@@ -97,6 +98,8 @@ public class RouteFinder {
 		RobotSpecification[] existingRobots =	new RobotSpecification[numObstaculos+1];
 		RobotSetup[] robotSetups 			= 	new RobotSetup[numObstaculos+1];
 		
+		int[][] matriz = p.getMatriz();
+		
 		/*
 	     * Creamos primero nuestro propio robot y lo colocamos en la posiciÃ³n inicial del problema,
 	     * que deberÃ¡ estar libre de obstÃ¡culo.
@@ -109,8 +112,8 @@ public class RouteFinder {
 		//double fila = 125.0, columna = 125.0, 
 		double arriba = 0.0;
 		
-		robotSetups[indice]=new RobotSetup(  (double) 50*p.filaIni +25	   ,        //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT
-											 (double) 50* p.columIni+25		   ,        //AQUÃ� DEBE FIGURAR LA COLUMNA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT    
+		robotSetups[indice]=new RobotSetup(  (double) 50*p.getFilaIni() +25	   ,        //AQUÃ� DEBE FIGURAR LA FILA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT
+											 (double) 50* p.getColumIni()+25		   ,        //AQUÃ� DEBE FIGURAR LA COLUMNA EN PIXELS CORRESPONDIENTE A LA POSICIÃ“N INICIAL DEL ROBOT    
 											 arriba);              //orientaciÃ³n inicial
 
 		
@@ -134,7 +137,7 @@ public class RouteFinder {
 			for (int c = 0; c < nCol; c++){
 				
 				//HEMOS PUESTO SOLO UNO
-				if((p.matriz[f][c]) == 1) {
+				if((matriz[f][c]) == 1) {
 					
 					existingRobots[indice] = modelRobots[0];   //sittingDuck
 					double fi = f;
@@ -148,11 +151,27 @@ public class RouteFinder {
 		}//for c
 	}//for f
 			
-		System.out.println("Generados " + (indice -1) + " sitting ducks.");
-					
-
-				
+		Algoritmo a = new Algoritmo();
+		ArrayList<Nodo> camino = a.buscaSolucion(p.getFilaIni(), p.getFilaFin(),  p.getColumIni(), p.getColumFin(), matriz);
 		
+			//CON ESTE BLOQUE DE CODIGO SE IMPRIME POR PANTALLA LA MATRIZ GENERADA
+		for(int i = 0; i < p.getNumFil(); i++) {
+			for(int j = 0; j < p.getNumCol(); j++) {
+				System.out.print("[" + matriz[i][j] + "] ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		System.out.println("Generados " + (indice - 1) + " sitting ducks.");		
+		System.out.println("Posicion inicial: "+p.filaIni + p.columIni);
+		System.out.println("Posicion final: "+p.filaFin + p.columFin);
+		System.out.print("Camino: ");
+		for(int i = 0; i < camino.size(); i++) {
+			System.out.print(camino.get(i));
+		}
+	
 		/* 
 		 * Crear y desarrollar la batalla con los robots antes definidos
 		 */
@@ -166,15 +185,12 @@ public class RouteFinder {
 						existingRobots,
 						robotSetups);
 		
-		
 		// Ejecutar la simulaciÃ³n el tiempo especificado
 		engine.runBattle(battleSpec, true); 
 		// Cerrar la simulaciÃ³n
 		engine.close();
 		// Asegurarse de que la MV de Java se cierra adecuadamente.
 		System.exit(0);
-		
-
 	}
 	
 }

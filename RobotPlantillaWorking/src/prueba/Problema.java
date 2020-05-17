@@ -24,6 +24,10 @@ public class Problema {
 		
 	}
 	
+	public int[][] getMatriz() {
+		return matriz;
+	}
+
 	private void posiciones() {
 		filaIni = ram.nextInt(numFil); //Para crear posicion inicial
 		columIni = ram.nextInt(numCol);
